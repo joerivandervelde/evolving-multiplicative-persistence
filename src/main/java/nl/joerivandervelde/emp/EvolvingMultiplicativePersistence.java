@@ -6,18 +6,20 @@ import java.util.Random;
 
 /**
  * Find big multiplicative persistent numbers by evolution.
- * <p>
- * See https://oeis.org/A003001 for more information on these numbers
- * and Numberphile video: https://www.youtube.com/watch?v=Wim9WJeDTHQ.
- * <p>
- * We create a random individual (i.e. number) and from this founder a
- * population of mutated clones. Each individual is scored for multiplicative
- * persistence. The best fraction survives and produces new clones to fill a
- * new generation.
- * <p>
- * There are two types of mutatios: point mutations, which alter the digit at
+ *
+ * See https://oeis.org/A003001 for more information on these numbers and
+ * Numberphile video: https://www.youtube.com/watch?v=Wim9WJeDTHQ.
+ *
+ * Here, one random individual (i.e. big number) is created. This founder
+ * gives rise to a population of mutated clones. Each individual is then
+ * scored for multiplicative persistence. The best fraction survives and
+ * produces new mutated clones that make up the new generation. After a
+ * number of iterations, the highest multiplicative persistence is reported.
+ *
+ * There are two types of mutations: point mutations, which alter a digit at
  * one place, and indel mutations, which are insertions of new digits or
- * deletions of existing digits.
+ * deletions of existing digits in the sequence of digits that make up a
+ * number.
  */
 public class EvolvingMultiplicativePersistence {
 
